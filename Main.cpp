@@ -16,6 +16,8 @@ using std::cin;
 
 #include "Main.h"
 
+bool first = false;
+
 int main()
 {
 	Grid* grid = new Grid();
@@ -29,9 +31,13 @@ int main()
 		cout << "Y: ";
 		cin >> y;
 		if (x >= GRID_LENGTH || y >= GRID_LENGTH) continue;
+		system("cls");
 		grid->gStatusElem[x][y] = true;
+		if (!first) {
+			first = true;
+			grid->gElements[x][y] = false;
+		}
 		if (grid->gElements[x][y] || grid->isWin()) {
-			system("cls");
 			grid->showFullGrid();
 			cout << endl << (!grid->isWin() ? "GAME OVER!" : "YOU WIN!");
 			break;
