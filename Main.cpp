@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <Windows.h>
 
 using std::cout;
@@ -30,7 +32,7 @@ int main()
 		cin >> x;
 		cout << "Y: ";
 		cin >> y;
-		if (x >= GRID_LENGTH || y >= GRID_LENGTH) continue;
+		if (x >= GRID_LENGTH || y >= GRID_LENGTH || grid->gStatusElem[x][y]) continue;
 		system("cls");
 		grid->gStatusElem[x][y] = true;
 		if (!first) {
