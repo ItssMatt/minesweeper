@@ -16,6 +16,7 @@ public:
 
 void Grid::loadGrid()
 {
+	srand(time(NULL));
 	for (int i = 0; i < GRID_LENGTH; i++)
 	{
 		for (int ii = 0; ii < GRID_LENGTH; ii++)
